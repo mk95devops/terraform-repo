@@ -7,3 +7,6 @@ ti:
 all: 
 	terraform init
 	terraform apply -auto-approve
+
+td: 
+	terraform destroy -auto-approve
