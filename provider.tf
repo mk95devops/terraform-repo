@@ -1,4 +1,3 @@
-provider "google" {
-  project     = "my-project-id"
-  region      = "us-central1"
+provider "aws" {
+  region      = "us-east-1"
 }
