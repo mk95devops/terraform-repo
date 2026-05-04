@@ -31,3 +31,12 @@ resource "aws_iam_policy" "test_policy" {
     ]
   })
 }
+
+resource "aws_s3_bucket" "example" {
+  bucket_prefix = "my-tf-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
