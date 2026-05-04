@@ -6,13 +6,13 @@ resource "aws_vpc" "example" {
 
 
 # Create IAM USER
-resource "aws_iam_user" "mk" {
+resource "aws_iam_user" "lb" {
   name = "mk"
 
 }
 
 # Create IAM USER
-resource "aws_iam_user" "Lana"{
+resource "aws_iam_user" "lana"{
   name= "Lana"
   
 }
