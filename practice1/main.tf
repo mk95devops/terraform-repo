@@ -41,14 +41,12 @@ resource "aws_iam_policy" "test_policy" {
 resource "aws_s3_bucket" "example" {
   bucket_prefix = "my-tf-bucket"
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+  tags = local.common_tags
 }
 
 # Adding key pair 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
   public_key = file("~/.ssh/id_rsa.pub")
+  tags = local.common_tags
 }
