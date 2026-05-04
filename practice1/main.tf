@@ -1,12 +1,7 @@
 # Create a VPC
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
-  tags = {
-    name= "Practice"
-    Environment= "Dev"
-    Createdby= "MK"
-
-  }
+  tags = local.common_tags
 }
 
 resource "aws_iam_user" "lb" {
