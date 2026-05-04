@@ -4,17 +4,35 @@ resource "aws_vpc" "example" {
   tags = local.common_tags
 }
 
+
+# Create IAM USER
 resource "aws_iam_user" "lb" {
   name = "mk"
 
 }
+
+# Create IAM USER
 resource "aws_iam_user" "lana"{
   name= "Lana"
   
 }
 
+# Create IAM GROUP
 resource "aws_iam_group" "developers" {
   name = "developers"
+}
+
+# Create IAM Group Membership
+
+resource "aws_iam_group_membership" "team" {
+  name = "tf-testing-group-membership"
+
+  users = [
+    aws_iam_user.mk.name,
+    aws_iam_user.Lana.name,
+  ]
+
+  group = aws_iam_group.developers.name
 }
 
 # IAM Policy 
