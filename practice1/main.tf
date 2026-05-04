@@ -13,6 +13,10 @@ resource "aws_iam_user" "lb" {
   name = "mk"
 
 }
+resource "aws_iam_user" "lana"{
+  name= "Lana"
+  group= "developers"
+}
 
 resource "aws_iam_group" "developers" {
   name = "developers"
