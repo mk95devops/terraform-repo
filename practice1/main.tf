@@ -6,13 +6,13 @@ resource "aws_vpc" "example" {
 
 
 # Create IAM USER
-resource "aws_iam_user" "lb" {
+resource "aws_iam_user" "mk" {
   name = "mk"
 
 }
 
 # Create IAM USER
-resource "aws_iam_user" "lana"{
+resource "aws_iam_user" "Lana"{
   name= "Lana"
   
 }
@@ -24,16 +24,7 @@ resource "aws_iam_group" "developers" {
 
 # Create IAM Group Membership
 
-resource "aws_iam_group_membership" "team" {
-  name = "tf-testing-group-membership"
 
-  users = [
-    aws_iam_user.mk.name,
-    aws_iam_user.Lana.name,
-  ]
-
-  group = aws_iam_group.developers.name
-}
 
 # IAM Policy 
 resource "aws_iam_policy" "test_policy" {
