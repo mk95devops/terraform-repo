@@ -24,7 +24,16 @@ resource "aws_iam_group" "developers" {
 
 # Create IAM Group Membership
 
+resource "aws_iam_group_membership" "team" {
+  name = "tf-testing-group-membership"
 
+  users = [
+    aws_iam_user.lb.name,
+    aws_iam_user.lana.name,
+  ]
+
+  group = aws_iam_group.developers.name
+}
 
 # IAM Policy 
 resource "aws_iam_policy" "test_policy" {
