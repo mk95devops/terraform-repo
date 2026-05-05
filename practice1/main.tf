@@ -18,6 +18,7 @@ resource "aws_iam_user" "lana"{
 }
 resource "aws_iam_user" "almostadmin"{
   name = "almostadmin"
+  tags = local.common_tags
 }
 
 # Create IAM GROUP
