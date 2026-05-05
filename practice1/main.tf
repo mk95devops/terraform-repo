@@ -16,6 +16,9 @@ resource "aws_iam_user" "lana"{
   name= "Lana"
   
 }
+resource "aws_iam_user" "almostadmin"{
+  name = "almostadmin"
+}
 
 # Create IAM GROUP
 resource "aws_iam_group" "developers" {
