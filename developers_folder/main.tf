@@ -1,3 +1,4 @@
-module python_app {
-    source = "../practice2"
+module "vpc" {
+source  = "mk95devops/vpc/aws"
+version = "0.0.3"
 }
