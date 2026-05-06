@@ -75,5 +75,5 @@ output instance_arn  {
   value = aws_instance.example.arn 
 }
 output instance_az  {
-  value = aws_instance.example.az 
+  value = aws_instance.example.availibility_zone
 }
