@@ -1,3 +1,3 @@
-module python app {
+module python_app {
     source = "../practice2"
 }
