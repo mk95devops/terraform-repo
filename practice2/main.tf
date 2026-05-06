@@ -68,6 +68,6 @@ resource "aws_iam_user" "mark"{
   name = "mark"
   tags = local.common_tags
 }
-output {
-  
+output instance_info  {
+  value = aws_instance.example 
 }
