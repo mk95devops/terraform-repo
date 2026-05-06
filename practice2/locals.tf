@@ -1,7 +1,7 @@
 locals {
-    commont_tags {
+    common_tags {
         name = "Dev" 
         Createdby= "MK"
-        
+
     }
 }
