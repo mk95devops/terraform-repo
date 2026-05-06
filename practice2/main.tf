@@ -68,3 +68,6 @@ resource "aws_iam_user" "mark"{
   name = "mark"
   tags = local.common_tags
 }
+output {
+  
+}
