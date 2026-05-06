@@ -63,3 +63,8 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_iam_user" "mark"{
+  name = "mark"
+  tags = local.common_tags
+}
