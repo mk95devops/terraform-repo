@@ -1,6 +1,6 @@
 locals {
     common_tags {
-        name = "Dev" 
+        Environment = "Dev" 
         Createdby= "MK"
 
     }
