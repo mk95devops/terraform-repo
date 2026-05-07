@@ -40,7 +40,7 @@ module "asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
 
   # Autoscaling group
-  name = "test-asg"
+  name = "test_asg"
 
   min_size                  = 0
   max_size                  = 3
@@ -48,6 +48,9 @@ module "asg" {
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
   availability_zones      = ["us-east-2a","us-east-2b","us-east-2c"]
+  target_group_arns = [
+  module.alb.target_groups["ex-instance"].arn
+]
 
 
 
@@ -60,6 +63,7 @@ module "asg" {
   instance_type     = "t3.micro"
   ebs_optimized     = false
   enable_monitoring = false
+  
 
 }
 
@@ -133,8 +137,4 @@ module "alb" {
     Environment = "Development"
     Project     = "Example"
   }
-}
-resource "aws_autoscaling_attachment" "asg_alb" {
-  autoscaling_group_name = aws_autoscaling_group.test-asg.id
-  lb_target_group_arn    = module.alb.target_groups["ex-instance"].arn
 }
