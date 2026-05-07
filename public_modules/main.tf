@@ -48,9 +48,7 @@ module "asg" {
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
   availability_zones      = ["us-east-2a","us-east-2b","us-east-2c"]
-  target_group_arns = [
-  module.alb.target_groups["ex-instance"].arn
-]
+
 
 
 
@@ -137,4 +135,8 @@ module "alb" {
     Environment = "Development"
     Project     = "Example"
   }
+}
+resource "aws_autoscaling_attachment" "asg_alb" {
+  autoscaling_group_name = module.asg.autoscaling_group_name
+  lb_target_group_arn    = module.alb.target_groups["ex-instance"].arn
 }
