@@ -16,3 +16,6 @@ module "vpc" {
     Environment = "dev"
   }
 }
+resource "aws_iam_user" "roof"{
+    name = "roof"
+}
