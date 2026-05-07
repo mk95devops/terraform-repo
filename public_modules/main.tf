@@ -68,7 +68,7 @@ module "alb" {
 
   name    = "my-alb"
   vpc_id  = "vpc-abcde012"
-  availability_zones = ["us-east-2a","us-east-2b","us-east-2c"]
+  subnets = ["subnet-abcde012", "subnet-bcde012a"]
 
   # Security Group
   security_group_ingress_rules = {
