@@ -135,8 +135,3 @@ module "alb" {
     Environment = "Development"
     Project     = "Example"
   }
-}
-resource "aws_autoscaling_attachment" "asg_alb" {
-  autoscaling_group_name = module.asg.autoscaling_group_name
-  lb_target_group_arn    = module.alb.target_groups["ex-instance"].arn
-}
