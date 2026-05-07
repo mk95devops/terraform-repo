@@ -43,8 +43,8 @@ module "asg" {
   name = "example-asg"
 
   min_size                  = 0
-  max_size                  = 1
-  desired_capacity          = 1
+  max_size                  = 3
+  desired_capacity          = 2
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
   availability_zones      = ["us-east-2a","us-east-2b","us-east-2c"]
