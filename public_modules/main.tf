@@ -40,7 +40,7 @@ module "asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
 
   # Autoscaling group
-  name = "example-asg"
+  name = "test-asg"
 
   min_size                  = 0
   max_size                  = 3
@@ -52,7 +52,7 @@ module "asg" {
 
 
   # Launch template
-  launch_template_name        = "example-asg"
+  launch_template_name        = "test-asg"
   launch_template_description = "Launch template example"
   update_default_version      = true
 
@@ -135,6 +135,6 @@ module "alb" {
   }
 }
 resource "aws_autoscaling_attachment" "asg_alb" {
-  autoscaling_group_name = aws_autoscaling_group.example-asg.name
+  autoscaling_group_name = aws_autoscaling_group.test-asg.id
   lb_target_group_arn    = module.alb.target_groups["ex-instance"].arn
 }
