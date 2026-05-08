@@ -1,4 +1,4 @@
-module "vpc" {
+#module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "my-vpc"
@@ -20,7 +20,7 @@ resource "aws_iam_user" "roof"{
     name = "roof"
 }
 
-data "aws_ami" "ubuntu" {
+#data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
@@ -35,8 +35,8 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-
-module "asg" {
+#
+#module "asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
 
   # Autoscaling group
