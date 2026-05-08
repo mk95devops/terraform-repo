@@ -1,6 +1,6 @@
 resource "aws_instance" "web" {
-  name = "web"
+  
 }
 resource "aws_vpc" "project-vpc" {
-  name = "project-vpc"
+    cidr_block = "10.0.0.0/16"
 }
