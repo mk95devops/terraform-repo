@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "centralus"
+  location = "East US"
 }
 
 resource "azurerm_virtual_network" "example" {
@@ -33,7 +33,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   name                = "example-machine"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-  size                = "Standard_A2_v2"
+  size                = "Standard_D2s_v3 "
   admin_username      = "adminuser"
   network_interface_ids = [
     azurerm_network_interface.example.id,
