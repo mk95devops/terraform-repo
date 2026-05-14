@@ -18,7 +18,7 @@ virginia:
 
 dvirginia:
 	
-	terraform workspace new virginia && terraform workspace select virginia &&\
+	terraform workspace new virginia || terraform workspace select virginia &&\
 	terraform destroy -var-file regions/us-east-1.tfvars -auto-approve  
 	
 
@@ -27,3 +27,7 @@ ohio:
 	terraform workspace new ohio || terraform workspace select ohio 
 	terraform apply -var-file regions/us-east-2.tfvars -auto-approve
 
+dohio:
+
+	terraform workspace new ohio || terraform workspace select ohio &&\
+	terraform destroy -var-file regions/us-east-2.tfvars -auto-approve  
