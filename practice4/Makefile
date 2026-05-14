@@ -31,3 +31,11 @@ dohio:
 
 	terraform workspace new ohio || terraform workspace select ohio &&\
 	terraform destroy -var-file regions/us-east-2.tfvars -auto-approve  
+
+build-all:
+	make virginia &&\
+	make ohio 
+
+destroy-all:
+	make dohio &&\
+	make dvirginia
