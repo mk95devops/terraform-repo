@@ -18,7 +18,7 @@ virginia:
 
 dvirginia:
 	
-	terraform workspace select default && terraform workspace delete virginia &&\
+	terraform workspace new virginia && terraform workspace select virginia &&\
 	terraform destroy -var-file regions/us-east-1.tfvars -auto-approve  
 	
 
