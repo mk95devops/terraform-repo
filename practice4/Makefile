@@ -10,3 +10,18 @@ all:
 
 td: 
 	terraform destroy -auto-approve
+
+virginia: 
+
+	terraform workspace new virginia || terraform select virginia
+	terraform apply -var-file regions/us-east-1.tfvars -auto-approve 
+
+dvirginia:
+	terraform workspace select default && terraform workspace delete virginia 
+	terraform destroy -var-file regions/us-east-1.tfvars -auto-approve 
+
+ohio:
+
+	terraform workspace new ohio || terraform select ohio 
+	terraform apply -var-file regions/us-east-2.tfvars -auto-approve
+
