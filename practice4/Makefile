@@ -33,9 +33,9 @@ dohio:
 	terraform destroy -var-file regions/us-east-2.tfvars -auto-approve  
 
 build-all:
-	make virginia &&\
+	make virginia 
 	make ohio 
 
 destroy-all:
-	make dohio &&\
+	make dohio 
 	make dvirginia
